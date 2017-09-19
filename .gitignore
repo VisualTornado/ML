@@ -1,1 +1,4 @@
 *.zip
+*.csv
+categorical_data.*
+missing_data*
