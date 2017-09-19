@@ -1,4 +1,4 @@
 *.zip
 *.csv
-categorical_data.*
+categorical_data*
 missing_data*
