@@ -4,4 +4,4 @@ The projects under this repository will be completed using Python 3.6.2 & R 3.2.
 
 This has been created for the purpose of learning for  people moving towards Data Science.
 
-This includes basics of R data structures and commands including important libraries that should be used.
+This includes basics of R data structures and commands including important libraries for bot R and Python that could be used to complete step task.
