@@ -12,11 +12,9 @@ y = dataset.iloc[:, 1].values     #Dependent
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state = 0)
-print(X_train)
-print(y_train)
-print(X_test)
-print(y_train)
+
 # Feature Scaling
 """from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
