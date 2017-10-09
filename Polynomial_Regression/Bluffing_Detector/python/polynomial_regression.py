@@ -24,7 +24,7 @@ X_test = sc_X.transform(X_test)"""
 from sklearn.linear_model import LinearRegression
 lin_reg = LinearRegression()
 lin_reg.fit(X, y)
-y_pred = lin_reg.predict(X)                                                                               # Predict salaries on basis of LR  
+y_pred = lin_reg.predict(X)                                                                      # Predict salaries on basis of LR  
 
 # Fitting Polynomial Regression to the dataset
 from sklearn.preprocessing import PolynomialFeatures

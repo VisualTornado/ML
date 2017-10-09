@@ -16,16 +16,17 @@ dataset <- dataset[2:3]
 # training_set = scale(training_set)
 # test_set = scale(test_set)
 
-# Fitting Linear Regression to the dataset
+# Fitting Linear Regression to the dataset                                     # Only to show difference b/w poly and linear regression. 
 lin_reg <- lm(formula = Salary ~ .,
              data = dataset)
 
-# Fitting Polynomial Regression to the dataset
+# Fitting Polynomial Regression to the dataset                                 # Changing the degree effects model fit.
 dataset$Level2 <- dataset$Level^2
 dataset$Level3 <- dataset$Level^3
 dataset$Level4 <- dataset$Level^4
 poly_reg <- lm(formula = Salary ~ .,
               data = dataset)
+summary(poly_reg)                                                              # To check how statiscally relevent the variables are.
 y_pred <- predict(poly_reg)
 # Visualising the Linear Regression results
 # install.packages('ggplot2')
@@ -54,7 +55,7 @@ ggplot() +
 # Visualising the Regression Model results (for higher resolution and smoother curve)
 # install.packages('ggplot2')
 library(ggplot2)
-x_grid <- seq(min(dataset$Level), max(dataset$Level), 0.1)
+x_grid <- seq(min(dataset$Level), max(dataset$Level), 0.1)                       # A better fit graph by reducing the scale for x-axis.  
 ggplot() +
   geom_point(aes(x = dataset$Level, y = dataset$Salary),
              colour = 'red') +
@@ -68,10 +69,11 @@ ggplot() +
   xlab('Level') +
   ylab('Salary')
 
+##=========== Predicting the exact salary for position level 6.5(Corrosponding to the business problem) ===============##
 # Predicting a new result with Linear Regression
 predict(lin_reg, data.frame(Level = 6.5))
 
-# Predicting a new result with Polynomial Regression
+# Predicting a new result with Polynomial Regression                            # Added all 4 levels here as the prediction is for a specific value.
 predict(poly_reg, data.frame(Level = 6.5,
                              Level2 = 6.5^2,
                              Level3 = 6.5^3,
